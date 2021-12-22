@@ -1,0 +1,123 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
+
+#container{
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	height: 400px;
+	background-color: #6699ff;
+	border-radius: 15px;
+	position: relative;
+	padding: .5em;
+	box-sizing: border-box;
+}
+
+#container ul{
+	position: absolute;
+	width: 100%;
+}
+
+#container ul .info{
+	display: flex;
+	align-items: center;
+	width: 50%;
+	list-style: none;
+	color: white;
+	font-weight: bold;
+}
+
+#container ul .info img{
+	display: block;
+	width: 50px;
+}
+
+.coin{
+	display: grid;
+	place-items: center;
+	position: relative;
+	transform-style: preserve-3d;
+	height: 80%;
+/*	animation: spin-head 3s forwards;*/
+}
+
+.coin.animation-head{
+	animation: spin-head 3s forwards;
+}
+
+.coin.animation-tail{
+	animation: spin-tail 3s forwards;
+}
+
+.coin .coin1, .coin2{
+	display: grid;
+	place-items: center;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.coin2{
+	transform: rotateX(180deg);
+}
+
+.button{
+	display: flex;
+	justify-content: space-evenly;
+	color: black;
+	height: 10%;
+	align-items: center;
+}
+
+button:disabled, button[disabled]{
+	color: black;
+}
+
+.button p{
+	font-size: 1.3rem;
+}
+
+.button .head, .tail{
+	display: grid;
+	place-items: center;
+	background-color: #ffff33;
+	width: 150px;
+	padding: .3em 1em;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5rem;
+	border-radius: 20px;
+	cursor: pointer;
+	border: none;
+}
+
+@keyframes spin-head{
+	0%{
+		transform: rotateX(0deg);
+	}
+
+	100%{
+		transform: rotateX(3600deg);
+	}
+}
+
+@keyframes spin-tail{
+	0%{
+		transform: rotateX(0);
+	}
+
+	100%{
+		transform: rotateX(3420deg);
+	}
+}

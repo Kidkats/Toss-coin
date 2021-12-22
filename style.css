@@ -7,6 +7,7 @@ body{
 	display: grid;
 	place-items: center;
 	height: 100vh;
+	box-sizing: border-box;
 }
 
 #container{
@@ -46,7 +47,6 @@ body{
 	position: relative;
 	transform-style: preserve-3d;
 	height: 80%;
-/*	animation: spin-head 3s forwards;*/
 }
 
 .coin.animation-head{
@@ -119,5 +119,34 @@ button:disabled, button[disabled]{
 
 	100%{
 		transform: rotateX(3420deg);
+	}
+}
+
+@media(max-width: 600px){
+
+	body{
+		display: grid;
+		place-items: center;
+	}
+
+	#container{
+		padding: 0;
+		max-width: 100vw;
+		height: 100vh;
+		border-radius: 0px;
+		box-sizing: border-box;
+	}
+
+	.coin .coin1, .coin2{
+		width: 200px;
+		height: 200px;
+	}
+
+	.coin{
+		height: 85%;
+	}
+
+	.coin img{
+		width: 100%;
 	}
 }
